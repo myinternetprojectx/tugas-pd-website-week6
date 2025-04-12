@@ -1,0 +1,844 @@
+/* Reset beberapa elemen dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Animasi scroll halus */
+}
+
+
+/* Pastikan margin dan padding body dan html juga direset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Pastikan body mengisi seluruh layar */
+}
+
+/* Body dan dasar tampilan */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: white; /* Warna putih untuk latar belakang header */
+  padding: 0px 50px; /* Padding lebih besar untuk header */
+  color: #333;
+  display: flex; /* Menggunakan Flexbox */
+  justify-content: space-between; /* Membuat ruang antara logo dan menu */
+  align-items: center; /* Menjaga logo dan teks di tengah secara vertikal */
+  margin: 0; /* Pastikan tidak ada margin pada header */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus di bawah header */
+  transition: all 0.3s ease-in-out; /* Transisi halus pada perubahan */
+  position: fixed; /* Membuat header tetap di posisi atas saat scroll */
+  top: 0; /* Menjaga header di atas */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Agar header berada di atas konten lainnya */
+}
+
+/* Efek hover pada header */
+header:hover {
+  background-color: #FFFBF0; /* Mengubah warna latar belakang saat hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Efek bayangan lebih dalam */
+}
+
+/* Logo */
+header .logo {
+  display: flex;
+  align-items: center; /* Menjaga logo dan teks di tengah secara vertikal */
+  text-align: center;
+  justify-content: center;
+  animation: slideInLeft 1s ease-out; /* Animasi logo masuk dari kiri */
+  position: relative;
+  left: -30px;
+}
+
+/* Gambar Logo */
+header .logo img {
+  height: 100px; /* Ukuran logo */
+  margin-right: 10px; /* Menambahkan jarak antara logo dan teks */
+  animation: pulse 2s infinite; /* Animasi pulsasi untuk logo */
+}
+
+/* Teks Brand */
+header .brand-text {
+  display: flex; /* Menggunakan Flexbox untuk menyusun teks */
+  flex-direction: column; /* Menyusun teks MIXUE dan yang lainnya secara vertikal */
+  align-items: flex-start; /* Menjaga teks tetap di kiri secara horizontal */
+  animation: fadeIn 1s ease-in-out; /* Animasi teks muncul */
+}
+
+/* Nama Brand */
+header .brand-main {
+  font-size: 3.5rem; /* Ukuran font lebih besar untuk MIXUE */
+  font-weight: bold;
+  color: #FF4C4C; /* Warna merah cerah */
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  letter-spacing: 2px; /* Memberikan jarak antar huruf */
+  transition: transform 0.3s ease; /* Efek transformasi halus */
+}
+
+header .brand-main:hover {
+  transform: scale(1.1); /* Efek memperbesar saat hover */
+}
+
+/* Subjudul Brand */
+header .brand-sub {
+  font-size: 10px;
+  color: #FF4C4C; /* Warna merah */
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8; /* Efek transparansi */
+  transition: opacity 0.3s ease; /* Efek transisi opacity */
+}
+
+header .brand-sub:hover {
+  opacity: 1; /* Efek opacity penuh saat hover */
+}
+
+/* Menu Navigasi */
+header nav ul {
+  list-style-type: none;
+  display: flex; /* Mengatur menu navigasi secara horizontal */
+}
+
+header nav ul li {
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: #FF4C4C;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease; /* Transisi halus saat hover */
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #FF4C4C;
+  bottom: -5px;
+  left: 50%;
+  transition: width 0.3s, left 0.3s; /* Efek garis bawah pada hover */
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Animasi untuk Logo */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animasi untuk Teks */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animasi Pulsasi untuk Logo */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Efek Opasitas untuk Header Saat Scroll */
+header.scrolled {
+  opacity: 0.85; /* Membuat header lebih transparan saat scroll */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Menurunkan bayangan untuk memberi efek lebih ringan */
+  background-color: rgba(255, 255, 255, 0.9); /* Memberikan latar belakang semi-transparan */
+}
+
+/* Home Section */
+#home {
+  background-color: #FFFBF0; /* Warna lembut untuk latar belakang */
+  text-align: center;
+  padding: 80px 0; /* Memberikan jarak lebih pada bagian atas dan bawah */
+  margin-top: 0; /* Menghindari margin tambahan pada home section */
+}
+
+  #home h1 {
+    color: #FF4C4C;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  #home p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  #home .btn {
+    background-color: #f0af22; /* Warna merah cerah yang kontras */
+    color: white;
+    padding: 15px 30px; /* Ukuran lebih besar untuk kesan tombol yang lebih menonjol */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px; /* Sudut yang lebih melengkung */
+    display: inline-block; /* Membuat tombol berbentuk blok, dan lebih responsif */
+    font-size: 15px; /* Ukuran font sedikit lebih besar */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+    text-transform: uppercase; /* Semua huruf menjadi kapital */
+    letter-spacing: 0px; /* Memberikan spasi antar huruf agar lebih modern */
+    transition: all 0.3s ease; /* Efek transisi saat tombol dihover */
+    position: relative;
+    top: -220px; /* Geser ke atas */
+    margin-left: 0; /* Pastikan tidak ada margin yang terlalu besar */
+    margin-right: 965px; /* Memberikan jarak antar elemen */
+  }
+  
+  #home .btn:hover {
+    background-color: #1669d6; /* Mengubah warna saat hover menjadi lebih gelap */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+    transform: translateY(-5px); /* Memberikan efek tombol terangkat saat hover */
+  }
+  
+  #home .btn:active {
+    background-color: #e60000; /* Mengubah warna saat tombol ditekan */
+    transform: translateY(2px); /* Memberikan efek tombol terdorong saat ditekan */
+  }  
+
+  /* Menambahkan Gambar di Home Section */
+.hero-image {
+  width: 100%; /* Membuat gambar memenuhi lebar layar */
+  height: auto; /* Menjaga rasio gambar */
+  object-fit: cover; /* Agar gambar mengisi area dengan baik */
+  margin-bottom: 20px; /* Memberi jarak antara gambar dan teks */
+}
+
+  
+/* About Us Section */
+#about {
+  background: linear-gradient(145deg, #FFFBF0, #fff); /* Soft gradient background */
+  padding: 100px 40px; /* Increased padding for a spacious feel */
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  border-top: 5px solid #FF4C4C; /* Bold border to highlight the section */
+  border-radius: 15px; /* Smooth rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Soft shadow for a floating effect */
+  overflow: hidden; /* Prevents content spillover */
+  position: relative;
+}
+
+/* Adding a subtle particle animation to the background */
+@keyframes particleAnimation {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/dot-grid-2x.png'); /* Soft texture for background */
+  opacity: 0.1;
+  animation: particleAnimation 10s linear infinite;
+  pointer-events: none; /* Keeps background effects non-interactive */
+}
+
+/* Container for text and image */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 60px; /* Extra spacing between text and image */
+  position: relative;
+  z-index: 1; /* Ensure content is on top of background particles */
+}
+
+/* Text Section */
+.about-text {
+  flex: 1;
+  margin-right: 50px;
+  max-width: 650px; /* Restrict text width for readability */
+}
+
+#about h2 {
+  font-size: 3.2rem;
+  color: #FF4C4C;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  animation: fadeInUp 1.5s ease-out;
+  z-index: 2; /* Ensure heading is on top */
+}
+
+/* Adding a glowing underline to the heading */
+#about h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: #FF4C4C;
+  box-shadow: 0 0 8px #FF4C4C;
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: underlineGlow 1.2s ease-out forwards;
+}
+
+@keyframes underlineGlow {
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+#about p {
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-family: 'Lora', serif;
+  text-align: justify;
+  animation: fadeInUp 2s ease-out;
+  z-index: 2;
+}
+
+/* Hover Effects for Text */
+#about p:hover {
+  color: #FF4C4C;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Image Section */
+.about-image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  border: 6px solid transparent; /* Invisible border for effect */
+  background: linear-gradient(45deg, rgba(255, 76, 76, 0.7), rgba(255, 255, 255, 0.8)); /* Gradient border effect */
+  transition: all 0.3s ease;
+  background-clip: padding-box;
+  padding: 10px;
+  transform: scale(1);
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Unique Decorative Border for Image */
+.about-image img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #FF4C4C; /* Red border */
+  border-radius: 18px;
+  z-index: -1; /* Behind the image */
+  background: url('https://www.transparenttextures.com/patterns/DiagonalStripes.png'); /* Subtle texture inside border */
+  opacity: 0.2;
+  pointer-events: none; /* Ensures the border does not block interaction */
+}
+
+/* Fade-in-up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-to-Top Button Style */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FF4C4C;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#scroll-to-top:hover {
+  background-color: #e03a3a;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  #about {
+    padding: 50px 20px; /* Reduced padding on smaller screens */
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    margin-right: 0;
+    margin-bottom: 30px; /* Space between text and image on mobile */
+  }
+
+  .about-image img {
+    max-width: 90%; /* Resize image for small screens */
+  }
+}
+  
+/* Lokasi Gerai Section */
+#locations {
+  padding: 80px 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1); /* Subtle but deep shadow for 3D effect */
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 76, 76, 0.15), rgba(0, 0, 0, 0.05)); /* Soft gradient for depth */
+}
+
+/* Decorative Diagonal Lines to add structure */
+#locations::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(135deg, rgba(255, 76, 76, 0.3), rgba(255, 76, 76, 0.15));
+  z-index: -1;
+  transform: rotate(-20deg);
+  pointer-events: none;
+  animation: moveDiagonal 15s linear infinite;
+}
+
+/* Diagonal line movement */
+@keyframes moveDiagonal {
+  0% {
+    transform: rotate(-20deg) translateX(0) translateY(0);
+  }
+  50% {
+    transform: rotate(-20deg) translateX(20%) translateY(20%);
+  }
+  100% {
+    transform: rotate(-20deg) translateX(0) translateY(0);
+  }
+}
+
+/* Title Styling */
+#locations h2 {
+  font-size: 3.5rem;
+  color: #FF4C4C;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Adding shadow for emphasis */
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Subtitle (Description Text) Styling */
+#locations p {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 40px;
+  font-family: 'Lora', serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeInUp 1.3s ease-out 0.5s forwards; /* Delayed animation */
+}
+
+/* Location List Styling */
+.location-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out 1s forwards;
+}
+
+.location-list ul li {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  padding-left: 40px;
+  position: relative;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Pin Icon for Locations */
+.location-list ul li:before {
+  content: "📍"; /* Pin emoji */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: #FF4C4C;
+}
+
+/* Hover effect for locations */
+.location-list ul li:hover {
+  color: #FF4C4C;
+  transform: translateX(10px); /* Move location slightly */
+}
+
+/* Add a soft border to location list */
+.location-list {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Operasional Hours */
+.operating-hours {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  animation: fadeInUp 1.8s ease-out 1.5s forwards;
+}
+
+.operating-hours h3 {
+  font-size: 2rem;
+  color: #FF4C4C;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.operating-hours ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.operating-hours li {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+}
+
+.operating-hours li:before {
+  content: "📅";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #FF4C4C;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  #locations {
+    padding: 60px 15px;
+  }
+
+  #locations h2 {
+    font-size: 2.5rem;
+  }
+
+  #locations p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .location-list ul li {
+    font-size: 1.1rem;
+    padding-left: 30px;
+  }
+
+  .operating-hours {
+    padding: 25px;
+  }
+
+  .operating-hours h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Produk Promo Section */
+#promo {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #FF4C4C, #FF8C00); /* Gradasi warna latar belakang */
+  border-radius: 20px;
+  animation: fadeInUp 1s ease-out; /* Animasi seluruh section */
+}
+
+#promo h2 {
+  color: #fff;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  animation: fadeInUp 1.5s ease-out; /* Animasi judul */
+}
+
+#promo p {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 40px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  animation: fadeInUp 2s ease-out; /* Animasi deskripsi */
+}
+
+/* Kontainer untuk kartu produk */
+.promo-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tiga kolom */
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+  padding: 0 10px;
+  animation: fadeInUp 2.5s ease-out;
+}
+
+/* Kartu Produk */
+.product-card {
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.98);
+}
+
+/* Hover effect untuk produk */
+.product-card:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  background-color: #FF4C4C; /* Ubah warna latar belakang saat hover */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.1); /* Efek zoom pada gambar saat hover */
+}
+
+/* Nama produk */
+.product-card h3 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.product-card h3:hover {
+  color: #fff; /* Warna berubah saat hover */
+}
+
+/* Harga produk */
+.product-card .price {
+  color: #FF4C4C;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Deskripsi produk */
+.product-card .description {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Animasi Fade-In */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  /* Responsif: Mengubah grid menjadi 2 kolom di layar lebih kecil */
+  .promo-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  /* Responsif: Mengubah grid menjadi 1 kolom di layar lebih kecil */
+  .promo-products {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tombol Lihat Produk Lainnya */
+.view-more {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btn-view-more {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #FF4C4C, #FF8C00); /* Gradien warna latar belakang */
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan tombol yang lebih halus */
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-view-more:hover {
+  background: linear-gradient(135deg, #FF8C00, #FF4C4C); /* Efek gradien terbalik saat hover */
+  transform: translateY(-8px) scale(1.05); /* Efek mengangkat dan sedikit membesarkan tombol */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Bayangan lebih tajam saat hover */
+}
+
+.btn-view-more:active {
+  background: linear-gradient(135deg, #e74c3c, #FF8C00); /* Gradien lebih gelap saat klik */
+  transform: translateY(0) scale(1); /* Mengembalikan posisi dan ukuran tombol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih lembut saat tombol ditekan */
+}
+
+.btn-view-more:focus {
+  outline: none; /* Menghilangkan outline */
+  box-shadow: 0 0 0 4px rgba(255, 76, 76, 0.5); /* Efek fokus dengan border berwarna */
+}
+
+
+  /* Footer */
+  footer {
+    background-color: #FF4C4C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer .social-media a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+  }
+  
+  footer .social-media a:hover {
+    text-decoration: underline;
+  }
+  

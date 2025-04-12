@@ -1,0 +1,356 @@
+/* Produk Lainnya Section */
+#other-products {
+    padding: 120px 20px;
+    background: linear-gradient(45deg, #ff4c4c, #f9d423, #ff7300, #ffcc00); /* Gradasi cerah dengan warna oranye, merah, dan kuning cerah */
+    background-size: 400% 400%; /* Latar belakang lebih besar untuk menciptakan efek gradasi yang halus */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: gradientBackground 15s ease-in-out infinite; /* Animasi gradasi bergerak secara terus-menerus */
+  }
+  
+  /* Animasi latar belakang bergerak */
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Efek Glimmer pada Latar Belakang */
+  #other-products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15); /* Efek bercahaya halus */
+    z-index: -1;
+    animation: glowingEffect 10s ease-in-out infinite; /* Efek bersinar yang bergerak */
+  }
+  
+  /* Animasi efek glowing */
+  @keyframes glowingEffect {
+    0% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Styling untuk Heading */
+  #other-products h2 {
+    color: #ff5733; /* Warna merah oranye yang cerah dan menonjol */
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* Animasi teks heading */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling untuk paragraf */
+  #other-products p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    animation: fadeInUp 2s ease-out;
+  }
+  
+  /* Kontainer untuk grid produk */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Empat kolom produk */
+    gap: 30px; /* Jarak antar produk */
+    justify-items: center;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+  
+  /* Styling untuk kartu produk */
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, border 0.3s ease;
+    background: #fff;
+    border: 2px solid #f8a5a5;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Efek animasi hover untuk kartu produk */
+  .product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ff5733;
+  }
+  
+  /* Gambar produk */
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  
+  /* Nama Produk */
+  .product-card h3 {
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 15px 0;
+    transition: color 0.4s ease, transform 0.4s ease;
+  }
+  
+  .product-card h3:hover {
+    color: #ff5733;
+    transform: translateY(-5px);
+  }
+  
+  /* Harga Produk */
+  .product-card .price {
+    color: #ff5733;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: color 0.4s ease;
+  }
+  
+  /* Deskripsi Produk */
+  .product-card .description {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  .product-card:hover .description {
+    color: #555;
+  }
+  
+  /* Animasi untuk kesan elegan */
+  @keyframes fadeInUpCard {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsif untuk tampilan lebih kecil */
+  @media (max-width: 1200px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr); /* Tiga kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr; /* Satu kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  /* Kartu Produk */
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, border 0.3s ease;
+    background: #fff;
+    border: 2px solid #f8a5a5;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 99, 71, 0.2), rgba(255, 222, 89, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ff5733;
+  }
+  
+  .product-card:hover::before {
+    opacity: 0.15;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  
+  .product-card h3 {
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 15px 0;
+    transition: color 0.4s ease, transform 0.4s ease;
+  }
+  
+  .product-card h3:hover {
+    color: #ff5733;
+    transform: translateY(-5px);
+  }
+  
+  .product-card .price {
+    color: #ff5733;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: color 0.4s ease;
+  }
+  
+  .product-card .description {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  .product-card:hover .description {
+    color: #555;
+  }
+  
+  /* Animasi untuk kesan elegan */
+  @keyframes fadeInUpCard {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsif untuk tampilan lebih kecil */
+  @media (max-width: 1200px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr); /* Tiga kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr; /* Satu kolom pada layar lebih kecil */
+      gap: 20px; /* Menurunkan gap untuk tampilan lebih kecil */
+    }
+  }
+  
+  /* Latar belakang dengan gradasi bergerak */
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3, #ff80ab, #ff9d00);
+  background-size: 400% 400%; /* Membuat latar belakang lebih besar dari ukuran layar */
+  animation: gradientAnimation 15s ease infinite; /* Animasi latar belakang bergerak */
+  z-index: -1; /* Pastikan latar belakang di belakang konten lainnya */
+}
+
+/* Animasi untuk gerakan gradasi */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
