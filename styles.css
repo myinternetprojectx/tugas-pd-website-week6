@@ -140,6 +140,112 @@ header nav ul li a:hover::after {
   left: 0;
 }
 
+/* RESPONSIF HEADER - MOBILE FRIENDLY */
+@media (max-width: 992px) {
+  header {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* Hamburger toggle muncul */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #FF4C4C;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Navigasi diubah ke bentuk dropdown */
+  header nav {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+  }
+
+  header nav.active {
+    max-height: 300px; /* Atur sesuai banyaknya menu */
+  }
+
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+    padding-left: 10px;
+  }
+
+  header nav ul li a {
+    font-size: 17px;
+  }
+
+  header .logo {
+    left: 0; /* Reset posisi logo */
+    margin-bottom: 10px;
+  }
+
+  header .logo img {
+    height: 60px;
+  }
+
+  header .brand-main {
+    font-size: 2rem;
+  }
+
+  header .brand-sub {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  header .brand-main {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+
+  header .brand-sub {
+    font-size: 8px;
+  }
+
+  header nav ul li a {
+    font-size: 16px;
+  }
+
+  .menu-toggle span {
+    width: 20px;
+  }
+}
+
+.menu-toggle {
+
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 200px; /* Ini yang bikin dia ke kanan */
+}
+
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #FF4C4C;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+
 /* Animasi untuk Logo */
 @keyframes slideInLeft {
   0% {
@@ -823,6 +929,98 @@ header.scrolled {
   box-shadow: 0 0 0 4px rgba(255, 76, 76, 0.5); /* Efek fokus dengan border berwarna */
 }
 
+/* RESPONSIVE TWEAKS FOR PROMO SECTION */
+
+@media (max-width: 1024px) {
+  #promo h2 {
+    font-size: 3rem;
+  }
+
+  #promo p {
+    font-size: 1.15rem;
+  }
+
+  .btn-view-more {
+    font-size: 1.2rem;
+    padding: 14px 35px;
+  }
+
+  .product-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .product-card .price {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #promo {
+    padding: 60px 15px;
+    border-radius: 15px;
+  }
+
+  #promo h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  #promo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .product-card {
+    padding: 20px;
+  }
+
+  .product-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .product-card .price {
+    font-size: 1.5rem;
+  }
+
+  .btn-view-more {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #promo h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  #promo p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .product-card {
+    padding: 18px;
+    max-width: 100%;
+  }
+
+  .product-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .product-card .price {
+    font-size: 1.3rem;
+  }
+
+  .product-card .description {
+    font-size: 0.95rem;
+  }
+
+  .btn-view-more {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
 
   /* Footer */
   footer {
