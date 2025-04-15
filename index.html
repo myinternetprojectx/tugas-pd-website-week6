@@ -12,6 +12,11 @@
   <div class="logo">
     <img src="pngwing.com.png" alt="Mixue Logo">
     <div class="brand-text">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <span class="brand-main">MIXUE</span>
       <span class="brand-sub">SINCE 1997 ~ ICE CREAM & TEA</span>
     </div>
@@ -31,7 +36,6 @@
   <div class="hero">
     <!-- Menambahkan gambar di bagian home -->
     <img src="mixue home.jpeg" alt="Mixue Awalan" class="hero-image">
-    <a href="#locations" class="btn">Temukan Gerai Terdekat</a>
   </div>
 </section>
 
@@ -124,6 +128,17 @@
       <a href="https://www.instagram.com/mixueindonesia/">Instagram</a> | <a href="https://www.facebook.com/MixueIndonesia/">Facebook</a> | <a href="https://x.com/mixue_indonesia">Twitter</a>
     </div>
   </footer>
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.querySelector('header nav');
+  
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
+    });
+  </script>  
 </body>
 </html>
 
